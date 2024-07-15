@@ -1,92 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+ 
 <head>
-    <title>Car Accessories</title>
-    <link rel="stylesheet" type="text/css" href="/Web/Class2 and 3/css/global.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+    <title>Accsessory Shop</title>
+    <meta name="description" content="Company quotation">
+    <meta name="author" content="SitePoint">
+ 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+ 
 <body>
-    <h1>Car Accessories</h1>
+    <div class="container">
+        <b>I Love Her
+            <span style="float:right;font-size:30px;">
+                VMS Hacker
+            </span>
+        </b>
+        <p>
+            Bangsaothong
+            <br>Samut Prakan
+            <span style="float:right;">
+                <img src="images.png" style="width:100px;height:100px;">
+            </span>
+            <br>Thailand
  
-    <h3>Add Accessory</h3>
-    <select id="accessory-select">
-        <option value="10">Car Cover</option>
-        <option value="20">Seat Covers</option>
-        <option value="30">Phone Holder</option>
-        <!-- Add more options here -->
-    </select>
-    <input type="number" id="amount-input" min="1" value="1">
-    <button class="add-button" onclick="addItem()">Add</button>
+        </p>
+        <br>
+        <p>10560</p>
+        <p id="bottom-line">
+            Phone: 086-20980
+            <span class="tab">Mobile: 0641601980</span>
+            <span style="float: right;">
+                <span id="currentDate">
+                    2024/7/14
+                </span>
+            </span>
+        </p>
+    </div>
+    
+    <div class="container">
+        <p class="thick" style="text-align: center;">
+            Currency Dollar
+            <span class="tab">No.:A000000</span>
+            <span style="float:left;">
+                Page No. 1  
+            </span>
+        </p>
  
+        <p style="text-align: center;">
+            Ship to:
+            <span class="tab">Sample customer name 001</span>
+            <span class="tab"></span>
+            <span class="tab"></span>
+            <span class="tab"></span>
+            <span style="float:left;">
+                To:
+                <span class="tab">Sample customer name 001</span>
+            </span>
+        </p>
+        <p style="text-align: center;">
+            Ship to address line1
+            <span style="float:left;">
+                <span class="tab"></span>   Sample address line1</span>
  
-    <h2>Product List</h2>
-    <table id="product-list">
-        <tr>
-            <th>Accessory</th>
-            <th>Amount</th>
-            <th>Price</th>
-        </tr>
+            <br>
+            Ship to address line2
+            <span style="float:left;">
+                <span class="tab"></span>   Sample address line2</span>
+ 
+            <br>
+            Ship to address line3
+            <span style="float:left;">
+                <span class="tab"></span>   Sample address line3</span>
+ 
+        </p>  
+    </div>
+    
+    <table class="center">
+        <thead>
+            <tr>
+                <th>Salesperson</th>
+                <th>Your P.O. No.</th>
+                <th>Date Shipped</th>
+                <th>Shipped Via</th>
+                <th>F.O.B Point</th>
+                <th>Terms</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="bottom-line">
+                <td class="data">Administrator</td>
+                <td class="data">Sample PO#</td>
+                <td class="data">2011/3/18</td>
+                <td class="data">Courier Services</td>
+                <td class="data">U.S.A</td>
+                <td class="data">2 Weeks</td>
+            </tr>
+        </tbody>
     </table>
-    
-    <h2>Total Price: <span id="total-price">$0</span></h2>
-    <h2>Vat Amount: <span id="vatAmount">$0</span></h2>
-    <h2>Total Price After Vat: <span id="totalVat">$0</span></h2>
  
-    
-    <script>
-        function addItem() {
-            // var accessorySelect = document.getElementById("accessory-select");
-            // var selectedAccessory = accessorySelect.options[accessorySelect.selectedIndex].text;
-            // var selectedAccessoryValue = accessorySelect.options[accessorySelect.selectedIndex].value;
-            // var amountInput = document.getElementById("amount-input");
-            // var amount = amountInput.value;
-            // var accessoryTable = document.getElementById("accessory-table");
-            // var price = parseFloat(selectedAccessoryValue)
-            // var totalPrice = document.getElementById("total-price");
-            // var productTable = document.getElementById("product-list");
-            // var vatAmount = document.getElementById("vatAmount");
-            // var totalVat = document.getElementById("totalVat");
-
-            // var row = productTable.insertRow(-1);
-            // var accessoryCell = row.insertCell(0);
-            // var amountCell = row.insertCell(1);
-            // var priceCell = row.insertCell(2);
-            
-            // accessoryCell.innerHTML = selectedAccessory;
-            // amountCell.innerHTML = amount;
-            // priceCell.innerHTML = "$" + (price * amount);
-
-            // // totalPrice.innerHTML = "$" + (parseFloat(totalPrice.innerHTML.substring(1)) + (price * amount));
-            // var totalValuePrice = parseFloat(totalPrice.innerHTML.substring(1)) + (price * amount);
-            // totalPrice.innerHTML = "$" + totalValuePrice;
-            // var vatRate = 0.07;
-            // var vatAmount1 = parseFloat((totalValuePrice * vatRate).toFixed(2));
-            // var totalVat1 = parseFloat((totalValuePrice + vatAmount1).toFixed(2));
-
-            // vatAmount.innerHTML = "$" + vatAmount1;
-            // totalVat.innerHTML = "$" + totalVat1;
-            var accessorySelect = $('#accessory-select');
-            var selectedAccessory = accessorySelect.find('option:selected').text();
-            var selectedAccessoryValue = accessorySelect.find('option:selected').val();
-            var amount = $('#amount-input').val();
-            var price = parseFloat(selectedAccessoryValue);
-            var totalPrice = $('#total-price');
-            var productTable = $('#product-list');
-            var vatAmount = $('#vatAmount');
-            var totalVat = $('#totalVat');
-
-            var newRow = '<tr><td>' + selectedAccessory + '</td><td>' + amount + '</td><td>$' + (price * amount) + '</td></tr>';
-            productTable.append(newRow);
-
-            var totalValuePrice = parseFloat(totalPrice.text().substring(1)) + (price * amount);
-            totalPrice.text('$' + totalValuePrice.toFixed(2));
-            var vatRate = 0.07;
-            var vatAmountValue = parseFloat((totalValuePrice * vatRate).toFixed(2));
-            var totalVatValue = parseFloat((totalValuePrice + vatAmountValue).toFixed(2));
-
-            vatAmount.text('$' + vatAmountValue);
-            totalVat.text('$' + totalVatValue);
-        }
-    </script>
+    <br>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Add Item
+    </button>
+    <table class="table table-striped table-bordered table-condensed" id="quotationTable">
+        <thead>
+            <tr>
+                <th>Quantity</th>
+                <th>Description</th>
+                <th>Unit Price</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody id="dataTable">
+ 
+        </tbody>
+        <tfooter>
+            <tr id="bottom-line">
+                <td class="data"><br></td>
+                <td class="data"></td>
+                <td class="data"></td>
+                <td class="data"></td>
+            </tr>
+ 
+            <tr id="sub-total">
+                <td colspan="3" class="data2 r colo"> Subtotal</td>
+                <td colspan="1" class="data2 r" id="bottom-line">
+                    <span id="subTotal">-----</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-right"> VAT</td>
+                <td colspan="1" class="text-right" id="vat">--</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-right"> Shipping &amp; Handling</td>
+                <td colspan="1" class="text-right" id="bottom-line">0.00</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-right"> Total Due</td>
+                <td colspan="1" class="text-right" id="total">--</td>
+            </tr>
+        </tfooter>
+    </table>
+ 
+    <br>
+ 
+    <p class="cen">
+        <b>Make all checks payable to:</b>
+        <br><i>Your company name here</i>
+        <br><b>If you have any question concerning this invoices, call:</b>
+        <br>
+        <br><b>THANK YOU FOR YOUR BUSINESS</b>
+    </p>
+ 
+    <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">Add Item</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <tr>
+                            <td>Description</td>
+                            <td><input type="text" id="newItemDescription"></td>
+                        </tr>
+                        <tr>
+                            <td>Price Per Unit</td>
+                            <td><input type="number" min="0" id="newItemPPU"></td>
+                        </tr>
+                        <tr>
+                            <td>Quantity</td>
+                            <td><input type="number" min="0" id="newItemQty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addItem()">Save New
+                        Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/script2.js"></script>
+ 
 </body>
-</html></select>
+ 
+</html>
