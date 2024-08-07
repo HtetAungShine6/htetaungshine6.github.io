@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "Web",
+			"path": "../.."
+		},
+		{
+			"name": "Table_Data_React",
+			"path": "../../../../Downloads/Table_Data_React"
+		},
+		{
+			"name": "Exercise",
+			"path": "../../../../.Trash/Exercise"
+		},
+		{
+			"name": "AlgorithmDesign",
+			"path": "../../../AlgorithmDesign"
+		}
+	],
+	"settings": {}
+}
